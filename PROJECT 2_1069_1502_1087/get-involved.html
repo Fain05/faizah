@@ -68,13 +68,19 @@
                 <img src="images/donate.png" alt="Donate" class="img-fluid"> <!-- Image for donation -->
             </div>
     
-            <!-- Partnership section -->
-            <div class="feature col-12 col-md-4">
-                <h2>PARTNER WITH US</h2>
-                <img src="images/partner-with-us.png" alt="Partner with us" class="img-fluid"> <!-- Image for partnership -->
-                <textarea id="message" name="message" required class="form-control"></textarea> <!-- Textbox for partnership message -->
-                <a href="#" class="btn">Submit</a> <!-- Submission button -->
-            </div>
+<!-- Partnership section -->
+<div class="feature col-12 col-md-4">
+    <h2>PARTNER WITH US</h2>
+    <img src="images/partner-with-us.png" alt="Partner with us" class="img-fluid">
+
+    <form action="#" method="post">
+        <div class="mb-3">
+            <label for="message" class="form-label">Your Message:</label>
+            <textarea id="message" name="message" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
     
         </section>
     </main>
