@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Donation eligibility check
+    // Donation functionality 
     function checkDonationEligibility(amount) {
         if (amount < 10) {
             alert("Minimum donation amount is RM10. Please enter a higher amount.");
@@ -38,25 +38,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Partnership form validation
-    function validatePartnership(event) {
-        var message = document.getElementById("message").value.trim();
-        if (message === "") {
-            alert("Please enter your message.");
-            event.preventDefault();  // Prevent form submission
-            return false;
+        // Partnership form validation
+        function validatePartnership(event) {
+            var message = document.getElementById("message").value.trim();
+            if (message === "") {
+                alert("Please enter your message.");
+                event.preventDefault();  // Prevent form submission
+                return false;
+            }
+            alert("Message submitted successfully!");
+            return false; 
         }
-        alert("Message submitted successfully!");
-        return false; // Prevent actual submission for demo purposes
-    }
+    
+        const partnershipForm = document.getElementById("partnership-form");
+        if (partnershipForm) {
+            partnershipForm.addEventListener("submit", validatePartnership);
+        }
 
-    // Attach the validation function to the partnership form submit event
-    const partnershipForm = document.getElementById("partnership-form");
-    if (partnershipForm) {
-        partnershipForm.addEventListener("submit", validatePartnership);
-    }
-
-    // Contact form validation
     function validateContactForm(event) {
         var nameField = document.getElementById("full-name");
         var emailField = document.getElementById("email-address");
@@ -99,17 +97,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     
         // All validations passed — show thank you alert and prevent actual submission for demo
-        event.preventDefault();  // Remove this line if you want real form submission
+        event.preventDefault();  
         alert("Thank you! Your message has been submitted.");
         return true;
     }
-
-    // Attach form submit validation to contact form
+    
+    // Attach form submit validation
     const contactForm = document.querySelector("form");
     if (contactForm) {
         contactForm.addEventListener("submit", validateContactForm);
     }
-
+    
     // Attach blur event to email field for immediate validation
     const emailField = document.getElementById("email-address");
     emailField.addEventListener("blur", function(event) {
@@ -127,7 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Slideshow code (unchanged)
+});
+	document.addEventListener("DOMContentLoaded", function () {
     let slideIndex = 0;
     const slides = document.querySelectorAll(".campaign-slideshow .slide");
 
@@ -142,40 +141,39 @@ document.addEventListener("DOMContentLoaded", function () {
     if (slides.length > 0) {
         showSlides();
     }
-
-    // Calendar script for April 2025 with events (unchanged)
-    const calendar = document.getElementById("calendar");
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    
-    // Add day names to the calendar
-    days.forEach(day => {
-        const div = document.createElement("div");
-        div.textContent = day;
-        div.className = "day-name";
-        calendar.appendChild(div);
-    });
-    
-    // Blank cells for alignment (April 2025 starts on a Tuesday)
-    for (let i = 0; i < 2; i++) {
-        const emptyCell = document.createElement("div");
-        calendar.appendChild(emptyCell);
-    }
-    
-    // Add days of the month to the calendar
-    for (let d = 1; d <= 30; d++) {
-        const dayCell = document.createElement("div");
-        dayCell.textContent = d;
-    
-        // Add special class for event days
-        if (d === 25) {
-            dayCell.className = "event";
-            dayCell.title = "Volunteer Day";
-        }
-        if (d === 30) {
-            dayCell.className = "event";
-            dayCell.title = "Charity Walk";
-        }
-    
-        calendar.appendChild(dayCell);
-    }
 });
+        // Calendar script for April 2025 with events
+        const calendar = document.getElementById("calendar");
+        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        
+        // Add day names to the calendar
+        days.forEach(day => {
+            const div = document.createElement("div");
+            div.textContent = day;
+            div.className = "day-name";
+            calendar.appendChild(div);
+        });
+        
+        // Blank cells for alignment (April 2025 starts on a Tuesday)
+        for (let i = 0; i < 2; i++) {
+            const emptyCell = document.createElement("div");
+            calendar.appendChild(emptyCell);
+        }
+        
+        // Add days of the month to the calendar
+        for (let d = 1; d <= 30; d++) {
+            const dayCell = document.createElement("div");
+            dayCell.textContent = d;
+        
+            // Add special class for event days
+            if (d === 25) {
+                dayCell.className = "event";
+                dayCell.title = "Volunteer Day";
+            }
+            if (d === 30) {
+                dayCell.className = "event";
+                dayCell.title = "Charity Walk";
+            }
+        
+            calendar.appendChild(dayCell);
+        }
