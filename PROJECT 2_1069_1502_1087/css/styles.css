@@ -1,0 +1,509 @@
+/* home.html */
+/* about.html */
+
+body {
+    color: black; /* Sets default text color */
+    text-align: center; /* Centers text for the entire page */
+    background: url("../images/bg.jpg") center/cover fixed no-repeat;/* Sets background image with fixed positioning */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Defines default font */
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    padding: 10px;
+    border-bottom: 2px solid #ff5757; /* Adds a red border at the bottom */
+}
+
+.logo {
+    width: 250px; /* Sets logo size */
+    display: block;
+    margin: 1px auto; /* Centers logo */
+}
+
+nav {
+    border: 2px solid white;
+    border-radius: 10px; /* Rounds the edges */
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    display: inline-block;
+    margin: 10px auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Aligns navigation links to the center */
+}
+
+nav ul li {
+    display: inline;
+    padding: 10px 15px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #ff5757; /* Changes background color on hover */
+    color: white;
+}
+
+nav ul li a.active {
+    text-decoration: none;
+    border-bottom: 3px solid black; /* Highlights active link */
+    padding-bottom: 5px; 
+}
+
+section {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    width: 80%;
+    max-width: 900px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+h2, h3 {
+    background-color: #ff5757;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: white;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: normal;
+    font-size: 1.2em; 
+}
+
+/* Specific styles for feature section h2 */
+.feature h2 {
+    margin-bottom: 15px;
+    padding: 10px 20px;  
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: center; 
+}
+
+#home {
+    width: 100%;
+    max-width: 1000px;
+}
+
+#home img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+.member {
+    text-align: center;
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes images circular */
+}
+
+footer {
+    border-top: 2px solid #ff5757;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 24px;
+    margin-bottom: 3px;
+}
+
+footer a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ff5757;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Slideshow styling */
+.slides {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Radio buttons control slideshow visibility */
+#slide1:checked ~ .slides .slide:nth-child(1),
+#slide2:checked ~ .slides .slide:nth-child(2),
+#slide3:checked ~ .slides .slide:nth-child(3) {
+    display: block;
+}
+
+/* Navigation dots for slideshow */
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#slide1:checked ~ .navigation label:nth-child(1),
+#slide2:checked ~ .navigation label:nth-child(2),
+#slide3:checked ~ .navigation label:nth-child(3) {
+    background-color: #ff5757;
+}
+
+input[type="radio"] {
+    display: none; /* Hides radio buttons */
+}
+
+.our-mission {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Adjust margin for spacing */
+}
+
+.option {
+    text-align: center;
+    max-width: 250px;
+    flex: 1;
+    margin-bottom: 20px; /* Add space at the bottom of each image box */
+}
+
+/* Make option images responsive */
+.option-img {
+    width: 100%; /* Ensures the images scale with their containers */
+    height: auto;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .option {
+        max-width: 100%; /* Make the option boxes stack on smaller screens */
+        flex: none; /* Prevent from stretching and allow to stack */
+    }
+}
+
+@media (max-width: 480px) {
+    .our-mission {
+        justify-content: center; /* Center the content on smaller screens */
+    }
+}
+
+
+/* About section */
+#about p {
+    border: 2px solid #ff5757;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    text-align: center;
+}
+
+/* get-involved.html */
+/* contact.html */
+#contact {
+    text-align: center;
+    padding: 20px;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact input[type="submit"] {
+    background-color: #ff5757;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+/* Features section */
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.feature, .option {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.333% - 40px); /* 3 columns on larger screens */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature img, .option img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.feature .btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #ff5757;
+    text-decoration: none;
+    border: 2px solid #ff5757;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.feature .btn:hover {
+    color: #ffffff;
+    background-color: #ff5757;
+    border: 2px solid #ca4e4e;
+    cursor: pointer;
+}
+
+/* Responsive Design: Stack columns on small screens */
+@media (max-width: 768px) {
+    .feature, .option {
+        width: calc(50% - 40px); /* 2 columns on tablets */
+    }
+}
+
+/* Fully stacked on small screens (mobile) */
+@media (max-width: 480px) {
+    .feature, .option {
+        width: calc(100% - 40px); /* 1 column on mobile */
+    }
+}
+
+
+/* campaigns.html */
+#campaigns {
+    text-align: center;
+    padding: 20px;
+}
+
+.campaigns-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.campaign {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #ff5757;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.campaign img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.campaign h3 {
+    background-color: #ff5757;
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 5px;
+    color: white;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #ff5757;
+    text-decoration: none;
+    border: 2px solid #ff5757;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    color: #ffffff;
+    background-color: #ff5757;
+    border: 2px solid #ca4e4e;
+    cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown content hidden by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown links */
+.dropdown-content li {
+    display: block;
+    text-align: left;
+    padding: 10px;
+}
+
+.dropdown-content li a {
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background-color: #ff5757;
+    color: white;
+}
+
+/* Top button for campaigns */
+#topBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    background-color: #ff5757;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#topBtn:hover {
+    background-color: #ca4e4e;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.day-name {
+    font-weight: bold;
+    color: #333;
+}
+
+#calendar div {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    min-height: 50px;
+}
+
+.event {
+	background-color: #ffb3b3 !important;
+	font-weight: bold;
+    cursor: pointer;
+}
+
+.event:hover {
+    background-color: #ff9999 !important;
+}
+
+/* Auto slideshow for campaigns */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.campaign-slideshow .slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
