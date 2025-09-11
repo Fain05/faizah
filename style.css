@@ -1,0 +1,170 @@
+/* Reset & general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  background-color: #FFF0CE;
+  color: #0F172A;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #0F172A;
+}
+
+/* Desktop nav */
+.nav-desktop {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-desktop .nav-link {
+  text-decoration: none;
+  color: #0F172A;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-desktop .nav-link:hover {
+  background-color: #FCC61D;
+  color: white;
+}
+
+/* Button style */
+.btn {
+  display: inline-block;       /* Make it behave like a button */
+  background-color: #FCC61D;   /* Your yellow color */
+  color: white;
+  font-weight: 600;
+  padding: 10px 25px;          /* Add padding for size */
+  border-radius: 25px;         /* Rounded edges */
+  text-decoration: none;       /* Remove underline */
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #e6b800;   /* Darker yellow on hover */
+}
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Language button */
+.lang-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #FCC61D;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 15px 20px;
+  border-top: 1px solid #0F172A;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mobile-menu .nav-link {
+  margin-bottom: 10px;
+  display: block;
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #0F172A;
+  transition: background 0.3s, color 0.3s;
+}
+
+.mobile-menu .nav-link:hover {
+  background-color: #FCC61D;
+  color: white;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+/* About */
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0F172A;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}
